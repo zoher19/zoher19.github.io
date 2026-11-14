@@ -1,0 +1,42 @@
+/* ==========================================================================
+   ZOMEN — Design Tokens (CSS Variables)
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --color-primary: #0B6E4F;
+  --color-primary-dark: #073B2C;
+  --color-primary-light: #EEF6F2;
+  --color-bg: #FFFFFF;
+  --color-text: #111111;
+  --color-text-secondary: #5F6B66;
+  --color-border: #E3ECE8;
+  --color-strike: #9AA7A2;
+
+  /* Fonts */
+  --font-heading: 'Alexandria', sans-serif;
+  --font-arabic: 'IBM Plex Sans Arabic', sans-serif;
+  --font-en: 'IBM Plex Sans', sans-serif;
+
+  /* Shadows */
+  --shadow-card: 0 8px 24px rgba(7, 59, 44, 0.08);
+  --shadow-card-hover: 0 14px 32px rgba(7, 59, 44, 0.12);
+  --shadow-button: 0 6px 16px rgba(11, 110, 79, 0.25);
+
+  /* Radius */
+  --radius-card: 16px;
+  --radius-pill: 999px;
+  --radius-sm: 10px;
+
+  /* Spacing scale */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
+  --space-2xl: 96px;
+
+  /* Layout */
+  --container-max: 1200px;
+  --transition-base: 0.25s ease;
+}

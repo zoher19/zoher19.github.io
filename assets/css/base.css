@@ -1,0 +1,141 @@
+/* ==========================================================================
+   ZOMEN — Reset, Typography, RTL base
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-arabic);
+  line-height: 1.7;
+  direction: rtl;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-text);
+}
+
+p {
+  margin: 0;
+}
+
+/* English / code content blocks */
+[lang="en"] {
+  font-family: var(--font-en);
+}
+
+/* Shared layout helpers */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-sm);
+}
+
+.section {
+  padding-block: var(--space-2xl);
+}
+
+.section--alt {
+  background: var(--color-primary-light);
+}
+
+.section--dark {
+  background: var(--color-primary-dark);
+  color: #FFFFFF;
+}
+
+.section__head {
+  margin-bottom: var(--space-lg);
+}
+
+.eyebrow {
+  display: block;
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

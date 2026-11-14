@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZOMEN — تعلّم البرمجة بالطريقة الصحيحة</title>
+  <meta name="description" content="دورات برمجة مسجّلة لطلاب الجامعات والمبتدئين: C++، Java وPython. شرح منهجي واضح، مسائل محلولة خطوة بخطوة، ومتابعة شخصية مع كل طالب حتى نهاية الدورة.">
+
+  <meta property="og:title" content="ZOMEN — تعلّم البرمجة بالطريقة الصحيحة">
+  <meta property="og:description" content="دورات برمجة مسجّلة لطلاب الجامعات والمبتدئين: C++، Java وPython. فهم عميق وتطبيق عملي ومتابعة شخصية.">
+  <meta property="og:image" content="assets/images/og-image.png">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@600;700&family=IBM+Plex+Sans+Arabic:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">ZOMEN</a>
+
+      <button class="navbar__toggle" aria-expanded="false" aria-controls="navMenu" aria-label="فتح القائمة">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="navbar__menu" id="navMenu">
+        <a href="#courses" class="navbar__link">الدورات</a>
+        <a href="#testimonials" class="navbar__link">آراء الطلاب</a>
+        <a href="#contact" class="btn btn--outline">تواصل معنا</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <h1 class="hero__title">تعلّم البرمجة بالطريقة الصحيحة: <em>فهم عميق، وتطبيق عملي</em></h1>
+          <p class="hero__desc">دورات مسجّلة مصمّمة لطلاب الجامعات والمبتدئين، تجمع بين شرح منهجي واضح، ومسائل محلولة خطوة بخطوة، ومتابعة شخصية مع كل طالب حتى نهاية الدورة.</p>
+          <div class="hero__actions">
+            <a href="#courses" class="btn btn--primary">استعرض الدورات</a>
+            <a href="#testimonials" class="btn btn--outline">آراء الطلاب</a>
+          </div>
+        </div>
+
+        <div class="hero__stats">
+          <div class="stat-card">
+            <span class="stat-card__label">طالب درسوا معنا</span>
+            <span class="stat-card__value" data-stat="students">+200</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__label">متابع على إنستغرام</span>
+            <span class="stat-card__value" data-stat="followers">+18.5K</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__label">متابعة شخصية لكل طالب</span>
+            <span class="stat-card__value" data-stat="mentorship">1:1</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Methodology -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow">منهجيتنا</span>
+          <h2>كيف نعلّم</h2>
+        </div>
+
+        <div class="method-grid">
+          <article class="method-card reveal">
+            <div class="method-card__top">
+              <span class="method-card__number">01</span>
+              <svg class="method-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polyline points="3 17 9 11 13 15 21 6"/><polyline points="15 6 21 6 21 12"/></svg>
+            </div>
+            <h3 class="method-card__title">شرح منهجي من الصفر</h3>
+            <p class="method-card__desc">كل مفهوم يُبنى على ما قبله، بتسلسل مدروس يضمن الفهم لا الحفظ.</p>
+          </article>
+
+          <article class="method-card reveal">
+            <div class="method-card__top">
+              <span class="method-card__number">02</span>
+              <svg class="method-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polyline points="4 17 10 11 14 15 20 9"/><polyline points="4 7 4 17 14 17"/></svg>
+            </div>
+            <h3 class="method-card__title">تطبيق بعد كل موضوع</h3>
+            <p class="method-card__desc">مسائل محلولة، ومهمة عملية، واختبار قصير بعد كل موضوع.</p>
+          </article>
+
+          <article class="method-card reveal">
+            <div class="method-card__top">
+              <span class="method-card__number">03</span>
+              <svg class="method-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-3.6 3.6-6 8-6"/><path d="m14 17 2.2 2.2L21 14"/></svg>
+            </div>
+            <h3 class="method-card__title">تصحيح ومتابعة شخصية</h3>
+            <p class="method-card__desc">أراجع مهامك واختباراتك بنفسي، وأرد على أسئلتك مباشرة.</p>
+          </article>
+
+          <article class="method-card reveal">
+            <div class="method-card__top">
+              <span class="method-card__number">04</span>
+              <svg class="method-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            </div>
+            <h3 class="method-card__title">مرونة كاملة</h3>
+            <p class="method-card__desc">الدورة مسجّلة، تتعلم في الوقت الذي يناسبك وتعيد أي درس متى شئت.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses -->
+    <section class="section section--alt" id="courses">
+      <div class="container">
+        <div class="section__head">
+          <h2>الدورات</h2>
+        </div>
+
+        <div class="courses__tracks">
+
+          <!-- C++ -->
+          <div class="course-track-wrap">
+            <div class="course-track">
+              <h3 class="course-track__title">مسار C++</h3>
+              <span class="course-track__count">دورتان</span>
+            </div>
+            <div class="course-track__grid">
+
+              <article class="course-card reveal">
+                <h4 class="course-card__title">أساسيات C++</h4>
+                <p class="course-card__desc">شرح شامل لأساسيات لغة C++ من الصفر، يغطي منهج مادة البرمجة الأولى في الجامعات.</p>
+                <hr class="price-card__divider">
+                <div class="price-card__row">
+                  <span class="price-card__badge" data-offer-badge>عرض لفترة محدودة · حتى الخميس 19/11</span>
+                  <span class="price-card__price">
+                    <span class="price-card__old" data-offer-old>35 JD</span>
+                    <span class="price-card__new">20 JD</span>
+                    <span class="price-card__usd">≈ $28</span>
+                  </span>
+                </div>
+                <a href="courses/cpp-fundamentals.html" class="btn btn--primary btn--block">تفاصيل دورة أساسيات C++</a>
+              </article>
+
+              <article class="course-card reveal">
+                <h4 class="course-card__title">البرمجة الكائنية OOP بلغة C++</h4>
+                <p class="course-card__desc">شرح متكامل لمفاهيم البرمجة الكائنية بلغة C++ بأمثلة واقعية، يغطي منهج المادة في الجامعات.</p>
+                <hr class="price-card__divider">
+                <div class="price-card__row">
+                  <span class="price-card__badge" data-offer-badge>عرض لفترة محدودة · حتى الخميس 19/11</span>
+                  <span class="price-card__price">
+                    <span class="price-card__old" data-offer-old>35 JD</span>
+                    <span class="price-card__new">20 JD</span>
+                    <span class="price-card__usd">≈ $28</span>
+                  </span>
+                </div>
+                <a href="courses/cpp-oop.html" class="btn btn--primary btn--block">تفاصيل دورة OOP بلغة C++</a>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- Java -->
+          <div class="course-track-wrap">
+            <div class="course-track">
+              <h3 class="course-track__title">مسار Java</h3>
+              <span class="course-track__count">دورتان</span>
+            </div>
+            <div class="course-track__grid">
+
+              <article class="course-card reveal">
+                <h4 class="course-card__title">أساسيات Java</h4>
+                <p class="course-card__desc">شرح شامل لأساسيات لغة Java من الصفر، يغطي منهج مادة البرمجة بلغة Java في الجامعات.</p>
+                <hr class="price-card__divider">
+                <div class="price-card__row">
+                  <span class="price-card__badge" data-offer-badge>عرض لفترة محدودة · حتى الخميس 19/11</span>
+                  <span class="price-card__price">
+                    <span class="price-card__old" data-offer-old>40 JD</span>
+                    <span class="price-card__new">25 JD</span>
+                    <span class="price-card__usd">≈ $35</span>
+                  </span>
+                </div>
+                <a href="courses/java-fundamentals.html" class="btn btn--primary btn--block">تفاصيل دورة Java</a>
+              </article>
+
+              <article class="course-card reveal">
+                <h4 class="course-card__title">البرمجة الكائنية OOP بلغة Java</h4>
+                <p class="course-card__desc">شرح متكامل لمفاهيم البرمجة الكائنية بأمثلة واقعية، يغطي منهج مادة OOP في الجامعات.</p>
+                <hr class="price-card__divider">
+                <div class="price-card__row">
+                  <span class="price-card__badge" data-offer-badge>عرض لفترة محدودة · حتى الخميس 19/11</span>
+                  <span class="price-card__price">
+                    <span class="price-card__old" data-offer-old>40 JD</span>
+                    <span class="price-card__new">25 JD</span>
+                    <span class="price-card__usd">≈ $35</span>
+                  </span>
+                </div>
+                <a href="courses/java-oop.html" class="btn btn--primary btn--block">تفاصيل دورة OOP بلغة Java</a>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- Python -->
+          <div class="course-track-wrap">
+            <div class="course-track">
+              <h3 class="course-track__title">مسار Python</h3>
+              <span class="course-track__count">دورة واحدة</span>
+            </div>
+            <div class="course-track__grid course-track__grid--single">
+
+              <article class="course-card reveal">
+                <h4 class="course-card__title">أساسيات Python</h4>
+                <p class="course-card__desc">شرح شامل لأساسيات لغة Python من الصفر، اللغة الأسهل للبدء والأكثر طلباً في الذكاء الاصطناعي.</p>
+                <hr class="price-card__divider">
+                <div class="price-card__row">
+                  <span class="price-card__badge" data-offer-badge>عرض لفترة محدودة · حتى الخميس 19/11</span>
+                  <span class="price-card__price">
+                    <span class="price-card__old" data-offer-old>35 JD</span>
+                    <span class="price-card__new">20 JD</span>
+                    <span class="price-card__usd">≈ $28</span>
+                  </span>
+                </div>
+                <a href="courses/python-fundamentals.html" class="btn btn--primary btn--block">تفاصيل دورة Python</a>
+              </article>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="testimonials__head">
+          <div>
+            <h2>تجارب طلابنا</h2>
+            <p class="testimonials__desc">رسائل حقيقية من طلاب أنهوا الدورات.</p>
+          </div>
+        </div>
+
+        <div class="testimonial-grid">
+          <div class="testimonial-grid__item"><img src="assets/images/feedback/feedback-01.jpg" alt="رسالة تقييم من طالب أنهى إحدى دورات ZOMEN" loading="lazy" width="400" height="300"></div>
+          <div class="testimonial-grid__item"><img src="assets/images/feedback/feedback-02.jpg" alt="رسالة تقييم من طالب أنهى إحدى دورات ZOMEN" loading="lazy" width="400" height="423"></div>
+          <div class="testimonial-grid__item"><img src="assets/images/feedback/feedback-03.jpg" alt="رسالة تقييم من طالب أنهى إحدى دورات ZOMEN" loading="lazy" width="400" height="526"></div>
+          <div class="testimonial-grid__item"><img src="assets/images/feedback/feedback-04.jpg" alt="رسالة تقييم من طالب أنهى إحدى دورات ZOMEN" loading="lazy" width="400" height="544"></div>
+          <div class="testimonial-grid__item"><img src="assets/images/feedback/feedback-05.jpg" alt="رسالة تقييم من طالب أنهى إحدى دورات ZOMEN" loading="lazy" width="400" height="366"></div>
+          <div class="testimonial-grid__item"><img src="assets/images/feedback/feedback-06.jpg" alt="رسالة تقييم من طالب أنهى إحدى دورات ZOMEN" loading="lazy" width="400" height="455"></div>
+          <div class="testimonial-grid__item"><img src="assets/images/feedback/feedback-07.jpg" alt="رسالة تقييم من طالب أنهى إحدى دورات ZOMEN" loading="lazy" width="400" height="190"></div>
+          <div class="testimonial-grid__item"><img src="assets/images/feedback/feedback-08.jpg" alt="رسالة تقييم من طالب أنهى إحدى دورات ZOMEN" loading="lazy" width="400" height="256"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section section--dark cta" id="contact">
+      <div class="container">
+        <h2 class="cta__title">ابدأ رحلتك في البرمجة على أساس صحيح</h2>
+        <a href="https://www.instagram.com/zoher19_/" class="btn btn--primary js-instagram-link" target="_blank" rel="noopener">تواصل معنا عبر إنستغرام</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span dir="ltr">© 2026</span>
+      <a href="https://www.instagram.com/zoher19_/" target="_blank" rel="noopener" class="footer__link js-instagram-link" dir="ltr">Instagram @zoher19_</a>
+      <span class="footer__logo">ZOMEN</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
