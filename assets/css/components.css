@@ -302,6 +302,7 @@
 
 .price-card__price {
   text-align: end;
+  margin-inline-start: auto;
 }
 
 .price-card__old {
@@ -327,11 +328,6 @@
   color: var(--color-text-secondary);
   font-size: 0.85rem;
   direction: ltr;
-}
-
-.price-card.is-offer-ended .price-card__badge,
-.price-card.is-offer-ended .price-card__old {
-  display: none;
 }
 
 /* ---------- Course Card (home listing) ---------- */
@@ -585,38 +581,4 @@
   color: var(--color-text);
   max-width: 62ch;
   margin-inline: auto;
-}
-
-/* ---------- Sticky mobile price bar ---------- */
-.sticky-price-bar {
-  position: fixed;
-  inset-inline: 0;
-  bottom: 0;
-  z-index: 40;
-  background: #FFFFFF;
-  box-shadow: 0 -8px 24px rgba(7, 59, 44, 0.12);
-  padding: var(--space-xs) var(--space-sm);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-sm);
-  transform: translateY(100%);
-  transition: transform var(--transition-base);
-}
-
-.sticky-price-bar.is-visible {
-  transform: translateY(0);
-}
-
-.sticky-price-bar__price {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  color: var(--color-primary);
-  direction: ltr;
-}
-
-@media (min-width: 768px) {
-  .sticky-price-bar {
-    display: none;
-  }
 }

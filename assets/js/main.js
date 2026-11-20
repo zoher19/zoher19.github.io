@@ -22,17 +22,49 @@
       }
     });
 
-    if (!config.isOfferActive()) {
-      document.querySelectorAll('[data-offer-badge]').forEach(function (el) {
-        el.style.display = 'none';
-      });
-      document.querySelectorAll('[data-offer-old]').forEach(function (el) {
-        el.style.display = 'none';
-      });
-      document.querySelectorAll('.price-card').forEach(function (el) {
-        el.classList.add('is-offer-ended');
-      });
-    }
+    renderPrices();
+    renderPractice();
+  }
+
+  /* ---------- Prices from config ----------
+     Markup: [data-price="<slug>"] containing [data-offer-badge], [data-offer-old],
+     [data-price-jd], [data-price-usd]. The HTML ships with the original price and
+     the badge/old price hidden, so an expired offer price is never shown. */
+  function renderPrices() {
+    document.querySelectorAll('[data-price]').forEach(function (el) {
+      var price = config.getPrice(el.getAttribute('data-price'));
+      if (!price) return;
+
+      var badge = el.querySelector('[data-offer-badge]');
+      var old = el.querySelector('[data-offer-old]');
+      var jd = el.querySelector('[data-price-jd]');
+      var usd = el.querySelector('[data-price-usd]');
+
+      if (jd) jd.textContent = price.jd + ' JD';
+      if (usd) usd.textContent = '≈ $' + price.usd;
+
+      if (old) {
+        old.textContent = price.oldJD + ' JD';
+        old.hidden = !price.onOffer;
+      }
+      if (badge) {
+        badge.textContent = config.getOfferBadgeText();
+        badge.hidden = !price.onOffer;
+      }
+    });
+  }
+
+  /* ---------- Practice count (تتضمن الدورة) from config ---------- */
+  function renderPractice() {
+    document.querySelectorAll('[data-practice]').forEach(function (el) {
+      var course = config.getCourse(el.getAttribute('data-practice'));
+      if (!course || !course.practice) return;
+
+      var value = el.querySelector('[data-practice-value]');
+      var label = el.querySelector('[data-practice-label]');
+      if (value) value.textContent = course.practice.value;
+      if (label) label.textContent = course.practice.label;
+    });
   }
 
   /* ---------- Mobile nav toggle ---------- */
@@ -76,25 +108,26 @@
     items.forEach(function (el) { observer.observe(el); });
   }
 
-  /* ---------- Sticky mobile price bar (course pages) ---------- */
-  function initStickyPrice() {
-    var bar = document.querySelector('.sticky-price-bar');
-    var mainPriceCard = document.querySelector('.price-card');
-    if (!bar || !mainPriceCard) return;
+  /* ---------- Scroll hint (course hero) ---------- */
+  function initScrollHint() {
+    var hint = document.querySelector('.scroll-hint');
+    if (!hint) return;
 
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        bar.classList.toggle('is-visible', !entry.isIntersecting && entry.boundingClientRect.top < 0);
-      });
-    }, { threshold: 0 });
+    function update() {
+      if (window.scrollY > 10) {
+        hint.classList.add('is-hidden');
+        window.removeEventListener('scroll', update);
+      }
+    }
 
-    observer.observe(mainPriceCard);
+    window.addEventListener('scroll', update, { passive: true });
+    update();
   }
 
   document.addEventListener('DOMContentLoaded', function () {
     applyConfig();
     initNavToggle();
     initReveal();
-    initStickyPrice();
+    initScrollHint();
   });
 })();

@@ -149,11 +149,13 @@
 }
 
 /* ---------- Course page hero ---------- */
-.course-hero__grid {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: var(--space-xl);
-  align-items: start;
+.course-hero {
+  position: relative;
+  padding-bottom: calc(var(--space-2xl) + var(--space-lg));
+}
+
+.course-hero__content {
+  max-width: 760px;
 }
 
 .course-hero__content h1 {
@@ -165,6 +167,43 @@
 .course-hero__desc {
   color: var(--color-text-secondary);
   font-size: 1.05rem;
+  margin-bottom: var(--space-lg);
+}
+
+/* Scroll hint: arrow + "اسحب للأسفل", fades out once the page scrolls */
+.scroll-hint {
+  position: absolute;
+  bottom: var(--space-md);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+  transition: opacity var(--transition-base), visibility var(--transition-base);
+}
+
+.scroll-hint:hover {
+  color: var(--color-primary);
+}
+
+.scroll-hint__arrow {
+  width: 22px;
+  height: 22px;
+  color: var(--color-primary);
+  animation: scroll-hint-bounce 1.6s ease-in-out infinite;
+}
+
+.scroll-hint.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes scroll-hint-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
 }
 
 .price-card__note {
@@ -178,17 +217,297 @@
   margin-inline: auto;
 }
 
-@media (max-width: 1023px) {
-  .course-hero__grid {
-    grid-template-columns: 1fr;
-  }
+/* ---------- Feature grid (تتضمن الدورة) ---------- */
+.section__desc {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  max-width: 62ch;
+  margin-top: var(--space-xs);
 }
 
-/* ---------- Feature grid (تتضمن الدورة) ---------- */
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-sm);
+}
+
+/* ---------- Register page ---------- */
+.register__head {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.register__head h1 {
+  font-size: 2.2rem;
+  line-height: 1.4;
+}
+
+.register__intro {
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.order-summary {
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.order-summary__label {
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+}
+
+/* Trust strip */
+.trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xs) var(--space-lg);
+  margin-block: var(--space-lg);
+}
+
+.trust-strip__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.trust-strip__icon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* Payment cards */
+.pay-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  align-items: start;
+}
+
+.pay-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.pay-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.pay-card__method {
+  font-family: var(--font-en);
+  font-size: 1.35rem;
+  font-weight: 600;
+  direction: ltr;
+}
+
+.pay-card__region {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+}
+
+.pay-card__amount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  background: var(--color-primary-light);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+}
+
+.pay-card__amount-label {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.pay-card__amount-value {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  direction: ltr;
+}
+
+.pay-card .steps {
+  gap: var(--space-md);
+}
+
+.step__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.pay-card .step__text {
+  color: var(--color-text);
+}
+
+.pay-field {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+}
+
+.pay-field__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.pay-field__label {
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+}
+
+.pay-field__value {
+  align-self: flex-start;
+  font-family: var(--font-en);
+  font-size: 1.1rem;
+  font-weight: 600;
+  direction: ltr;
+  overflow-wrap: break-word;
+}
+
+.pay-field__value[data-copy-compact] {
+  white-space: nowrap;
+}
+
+.copy-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background var(--transition-base), color var(--transition-base);
+}
+
+.copy-btn:hover {
+  background: var(--color-border);
+}
+
+.copy-btn:focus-visible {
+  outline: 2px solid var(--color-primary-dark);
+  outline-offset: 2px;
+}
+
+.copy-btn__icon {
+  width: 16px;
+  height: 16px;
+}
+
+.copy-btn.is-copied {
+  background: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.copy-btn.is-copied .copy-btn__icon {
+  display: none;
+}
+
+.pay-card__note {
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Course picker (no / unknown slug) */
+.course-picker {
+  max-width: 640px;
+  margin-inline: auto;
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.course-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  background: #FFFFFF;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-sm) var(--space-md);
+  font-weight: 600;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.course-option:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.course-option__arrow {
+  width: 20px;
+  height: 20px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+@media (max-width: 1023px) {
+  .pay-grid {
+    grid-template-columns: 1fr;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 639px) {
+  .register__head h1 {
+    font-size: 1.8rem;
+  }
+
+  .trust-strip {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pay-card {
+    padding: var(--space-sm);
+  }
+
+  .pay-field {
+    padding: 10px 12px;
+    gap: var(--space-xs);
+  }
+
+  .pay-field__value {
+    font-size: 1rem;
+  }
+
+  .copy-btn {
+    padding: 8px 10px;
+  }
 }
 
 /* ---------- Responsive container tweaks ---------- */
