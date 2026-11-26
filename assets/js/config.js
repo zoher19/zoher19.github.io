@@ -13,7 +13,7 @@
     instagramLink: 'https://www.instagram.com/zoher19_/',
 
     /* نهاية العرض بتوقيت الأردن. نص الشارة ("حتى الخميس 26/11") يتولّد منه تلقائياً. */
-    offerEndDate: '2026-11-26T23:59:00+03:00',
+    offerEndDate: '2026-12-03T23:59:00+03:00',
 
     stats: {
       students: '+200',
